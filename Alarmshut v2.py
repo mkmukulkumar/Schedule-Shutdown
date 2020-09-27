@@ -1,6 +1,7 @@
 import os 
 import tkinter 
 import time
+
 def shut(event) : 
     s=txtbox.get()  
     for i in range(len(s)) : 
@@ -13,7 +14,7 @@ def shut(event) :
 # def po(event) :
 # 	print("hi")
 def abort(event):
-	os.system("shutdown /a")
+    os.system("shutdown /a")
 #selection of min or second
 root=tkinter.Tk()
 root.title("Shutdown")
@@ -24,11 +25,11 @@ mylabel=tkinter.Label(root, text="Time to shutdown (min)",
 						fg="white",bg="grey",
 						font="Times 24",
 						anchor="w")
-mylabel.pack()
+mylabel.pack(pady=10)
 
 
 
-txtbox=tkinter.Entry(root,width=20,fg="green",font="Arial 20")
+txtbox=tkinter.Entry(root,width=20,fg="green",font="Arial 17",bd =5)
 txtbox.bind("<Return>",shut)
 txtbox.pack()
 
@@ -38,16 +39,13 @@ txtbox.pack()
 #button=tkinter.Button(root, text="Shutdown", command=shut(txtbox.get()))
 button=tkinter.Button(root, text="Shutdown",font="bold",border="5")
 button.bind("<Button-1>",shut)
-button.pack()
+button.pack(padx=80, side="left")
 #button.grid(row=3,column=0)
 
 butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5",)
 butt.bind("<Button-1>",abort)
 #butt.grid(row=3,column=1)
-butt.pack()
+butt.pack( side="left")
 
 # butt=Button(root, text-"Abort")
-
-
-
 root.mainloop()
