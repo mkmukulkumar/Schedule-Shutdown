@@ -9,8 +9,7 @@ def shut(event) :
             exit()
     print("started")
     time.sleep(int(s)*60)
-    print("shutdown")	
-   # os.system("shutdown -s -t " + str(tme))
+    os.system("shutdown")	
 
 def abort(event):
     os.system("shutdown /a")
