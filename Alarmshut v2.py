@@ -18,17 +18,17 @@ def abort(event):
 root=tkinter.Tk()
 root.title("Shutdown")
 root.geometry("400x200")
-root.configure(background="black")
+root.configure(background="grey")
 
-mylabel=tkinter.Label(root, text="Time to shutdown",
-						fg="white",bg="black",
-						font="Times 30 bold",
+mylabel=tkinter.Label(root, text="Time to shutdown (min)",
+						fg="white",bg="grey",
+						font="Times 24",
 						anchor="w")
 mylabel.pack()
 
 
 
-txtbox=tkinter.Entry(root,width=20,fg="green",font="Verdana 20")
+txtbox=tkinter.Entry(root,width=20,fg="green",font="Arial 20")
 txtbox.bind("<Return>",shut)
 txtbox.pack()
 
@@ -36,12 +36,12 @@ txtbox.pack()
 # timer.pack()
 
 #button=tkinter.Button(root, text="Shutdown", command=shut(txtbox.get()))
-button=tkinter.Button(root, text="Shutdown",font="bold")
+button=tkinter.Button(root, text="Shutdown",font="bold",border="5")
 button.bind("<Button-1>",shut)
 button.pack()
 #button.grid(row=3,column=0)
 
-butt=tkinter.Button(root, text="Abort",fg="red",font="bold")
+butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5",)
 butt.bind("<Button-1>",abort)
 #butt.grid(row=3,column=1)
 butt.pack()
