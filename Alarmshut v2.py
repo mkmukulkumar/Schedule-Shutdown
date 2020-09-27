@@ -9,13 +9,13 @@ def shut(event) :
             exit()
     print("started")
     time.sleep(int(s)*60)
-    print("hi")
-    # os.system("shutdown")	
-  
+    os.system("shutdown")	
+
 # def po(event) :
 # 	print("hi")
 def abort(event):
-    os.system("shutdown /a")
+    root.destroy()
+    # os.system("shutdown /a")
 #selection of min or second
 root=tkinter.Tk()
 root.title("Shutdown")
@@ -26,8 +26,7 @@ mylabel=tkinter.Label(root, text="Time to shutdown (min)",
 						fg="white",bg="grey",
 						font="Times 24",
 						anchor="w")
-mylabel.pack(pady=10)
-
+mylabel.pack(pady=30)
 
 
 txtbox=tkinter.Entry(root,width=20,fg="green",font="Arial 17",bd =5)
@@ -43,14 +42,11 @@ button.bind("<Button-1>",shut)
 button.pack(padx=80, side="left")
 #button.grid(row=3,column=0)
 
-butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5",command=root.destroy)
-#butt.bind("<Button-1>",abort)
+butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5")
+butt.bind("<Button-1>",abort)
 #butt.grid(row=3,column=1)
 butt.pack( side="left")
 
-# root = Tk()
-# Button(root, text="Quit", command=root.destroy).pack()
-# root.mainloop()
 
 # butt=Button(root, text-"Abort")
 root.mainloop()
