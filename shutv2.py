@@ -1,0 +1,53 @@
+import os 
+import tkinter 
+import time
+def shut(event) : 
+    s=txtbox.get()  
+    for i in range(len(s)) : 
+        if s[i].isdigit() != True : 
+            exit()
+    print("started")
+    time.sleep(int(s)*60)
+    os.system("shutdown")	
+  
+# def po(event) :
+# 	print("hi")
+def abort(event):
+	os.system("shutdown /a")
+#selection of min or second
+root=tkinter.Tk()
+root.title("Shutdown")
+root.geometry("400x200")
+root.configure(background="black")
+
+mylabel=tkinter.Label(root, text="Time to shutdown",
+						fg="white",bg="black",
+						font="Times 30 bold",
+						anchor="w")
+mylabel.pack()
+
+
+
+txtbox=tkinter.Entry(root,width=20,fg="green",font="Verdana 20")
+txtbox.bind("<Return>",shut)
+txtbox.pack()
+
+# timer=tkinter.Label(root, text="00:00:00",bd=2, fg="green",anchor="s")
+# timer.pack()
+
+#button=tkinter.Button(root, text="Shutdown", command=shut(txtbox.get()))
+button=tkinter.Button(root, text="Shutdown",font="bold")
+button.bind("<Button-1>",shut)
+button.pack()
+#button.grid(row=3,column=0)
+
+butt=tkinter.Button(root, text="Abort",fg="red",font="bold")
+butt.bind("<Button-1>",abort)
+#butt.grid(row=3,column=1)
+butt.pack()
+
+# butt=Button(root, text-"Abort")
+
+
+
+root.mainloop()
