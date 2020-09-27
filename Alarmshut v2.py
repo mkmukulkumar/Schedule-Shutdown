@@ -9,7 +9,8 @@ def shut(event) :
             exit()
     print("started")
     time.sleep(int(s)*60)
-    os.system("shutdown")	
+    print("hi")
+    # os.system("shutdown")	
   
 # def po(event) :
 # 	print("hi")
@@ -42,10 +43,14 @@ button.bind("<Button-1>",shut)
 button.pack(padx=80, side="left")
 #button.grid(row=3,column=0)
 
-butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5",)
-butt.bind("<Button-1>",abort)
+butt=tkinter.Button(root, text="Abort",fg="red",font="bold",border="5",command=root.destroy)
+#butt.bind("<Button-1>",abort)
 #butt.grid(row=3,column=1)
 butt.pack( side="left")
+
+# root = Tk()
+# Button(root, text="Quit", command=root.destroy).pack()
+# root.mainloop()
 
 # butt=Button(root, text-"Abort")
 root.mainloop()
