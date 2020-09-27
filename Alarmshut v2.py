@@ -1,20 +1,27 @@
 import os 
 import tkinter 
 import time
-
+abrt=0
 def shut(event) : 
     s=txtbox.get()
     for i in range(len(s)) : 
         if s[i].isdigit() != True : 
             exit()
     print("started")
-    time.sleep(int(s)*60)
-    print("shutdown")	
+    # time.sleep(int(s)*60)
+    # print("shutdown")	
+    for x in range(1,int(s)*60):
+        time.sleep(1)
+        if abrt==1:
+            exit()
+    print("shutdown")
    # os.system("shutdown -s -t " + str(tme))
 
 def abort(event):
-    os.system("shutdown /a")
-    root.destroy()
+    abrt=1
+    print('abrt')
+    # os.system("shutdown /a")
+    # root.destroy()
     
 #selection of min or second
 root=tkinter.Tk()
