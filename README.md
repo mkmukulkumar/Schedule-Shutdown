@@ -1,3 +1,3 @@
 # Shutdown Timer
 ### About
-Shutdown your computer Automatically
+Shutdown your computer when the timer runs out.
